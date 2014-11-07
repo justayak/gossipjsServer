@@ -34,8 +34,9 @@ function GossipBroker(options){
         var sample = self.connectedNodes.sample(5);
         var result = "[";
         for (var i = 0; i < sample.length; i++){
-            result += sample[i];
+            result += sample[i] + ",";
         }
+        if (sample.length > 0) result.pop();
         result += "]";
         res.end(result);
     }).listen(options.bootstrapPort);
