@@ -33,7 +33,6 @@ function GossipBroker(options){
         });
         var sample = self.connectedNodes.sample(5);
         var result = "[";
-        if (sample.length > 0) result += ",";
         for (var i = 0; i < sample.length; i++){
             result += sample[i];
             if (i < (sample.length - 1)){
