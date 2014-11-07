@@ -25,7 +25,12 @@ function GossipBroker(options){
 
     http.createServer(function (req, res) {
         console.log("http input!");
-        res.writeHead(200, {'Content-Type': 'text/plain'});
+
+        res.writeHead(200, {
+            'Access-Control-Allow-Origin' : 'http://85.25.215.113',
+            'Access-Control-Allow-Credentials' : 'true',
+            'Content-Type': 'text/plain'
+        });
         res.end("Hello world!");
     }).listen(options.bootstrapPort);
     this.debug("Http bootstrap server on port " + options.bootstrapPort);
