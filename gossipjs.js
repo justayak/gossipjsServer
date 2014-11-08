@@ -31,7 +31,7 @@ function GossipBroker(options){
             'Access-Control-Allow-Credentials' : 'true',
             'Content-Type': 'text/plain'
         });
-        var sample = self.connectedNodes.sample(5);
+        var sample = self.connectedNodes.sample(2);
         var result = "[";
         for (var i = 0; i < sample.length; i++){
             result += sample[i];
