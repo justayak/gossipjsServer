@@ -24,7 +24,7 @@ function GossipBroker(options){
     this.connectedNodes = new Essz.HashList();
 
     http.createServer(function (req, res) {
-        console.log("http input!");
+        console.log("http input!" + req.url);
 
         res.writeHead(200, {
             'Access-Control-Allow-Origin' : 'http://85.25.215.113',
