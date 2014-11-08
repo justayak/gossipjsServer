@@ -17,6 +17,7 @@ function GossipBroker(options){
     if (typeof options === 'undefined') throw "GossipBroker needs options-parameter";
     if (! ('port' in options)) throw "GossipBroker options need to specify a port";
     if (! ('bootstrapPort' in options)) throw "GossipBroker options need to specify a bootstrapPort";
+    if (! ('cors' in options)) throw "GossipBroker options need CORS";
     this._debug = 'debug' in options && options.debug;
     var server = new PeerServer({port:options.port, path: '/b'});
     var self = this;
@@ -27,7 +28,7 @@ function GossipBroker(options){
         console.log("http input!" + req.url);
 
         res.writeHead(200, {
-            'Access-Control-Allow-Origin' : 'http://85.25.215.113',
+            'Access-Control-Allow-Origin' : options.cors,
             'Access-Control-Allow-Credentials' : 'true',
             'Content-Type': 'text/plain'
         });
