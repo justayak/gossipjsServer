@@ -1,5 +1,5 @@
 /**
- * Created by julian on 17/10/14.
+ * Created by Julian on 17/10/14.
  */
 var cors = "http://85.25.215.113";
 cors = "http://localhost:8000";
